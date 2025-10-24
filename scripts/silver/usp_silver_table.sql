@@ -1,16 +1,15 @@
 /*
 
-Insert cleaned data from bronze schema table to the silver schema table
+User Stored Procedure : Load Silver Layer
 ========================================================================
 
 Script Purpose: 
-	Script ini digunakan untuk melakukan insert data dari data
-	bronze yang sudah ditransformasi dan dibersihkan menuju tabel 
-	tujuan yang berada pada schema silver dengan menggunakan 
-	stored procedure
+	Script ini digunakan untuk melakukan proses ETL	(Extract, Transform, 
+	& Load) data dari tabel schema	bronze yang sudah ditransformasi dan 
+	dibersihkan menuju tabel tujuan yang berada pada schema silver dengan 
+	menggunakan stored procedure.
 
-Usage:
-	EXEC silver.load_silver;
+Run: EXEC silver.load_silver;
 */
 CREATE OR ALTER PROCEDURE silver.load_silver AS
 BEGIN

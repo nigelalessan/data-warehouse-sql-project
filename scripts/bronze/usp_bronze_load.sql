@@ -1,17 +1,16 @@
 /*
 
-Bulk Insert CSV from files to the table
+User Stored Procedure: Bulk Insert CSV into Bronze Layer
 ==================================================================
 
 Script Purpose: 
 	Script ini digunakan untuk melakukan bulk insert data dari data
-	csv menuju tabel tujuan yang berada pada schema bronze dengna 
+	.csv menuju tabel tujuan yang berada pada schema bronze dengna 
 	menggunakan stored procedure. Pertama script akan melakukan
 	truncate table sebelum table dimuat. Setelah itu script akan
 	melakukan bulk insert kepada tabel-tabel tersebut
 
-Usage:
-	EXEC bronze.load_bronze;
+Run: EXEC bronze.load_bronze;
 */
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN

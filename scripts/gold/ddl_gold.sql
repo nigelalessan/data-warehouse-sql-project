@@ -1,3 +1,15 @@
+/*
+
+Create Views
+===================================================================================================
+
+Script:
+	This script is used to perform DDL operations in the gold schema by creating views, consisting of 
+	three tables: dim_customers, dim_products, and fact_sales.
+*/
+
+
+
 IF OBJECT_ID('gold.dim_customers', 'V') IS NOT NULL
     DROP VIEW gold.dim_customers;
 GO
@@ -8,7 +20,7 @@ GO
 
 CREATE VIEW gold.dim_customers AS
 SELECT
-	ROW_NUMBER() OVER(ORDER BY ci.cst_id) AS customer_key,
+	ROW_NUMBER() OVER(ORDER BY ci.cst_id) AS customer_key, -- Surrogate Key
 	ci.cst_id AS customer_id,
 	ci.cst_key AS customer_code,
 	ci.cst_firstname AS first_name,
@@ -38,7 +50,7 @@ GO
 
 CREATE VIEW gold.dim_products AS
 SELECT
-	ROW_NUMBER() OVER(ORDER BY pi.prd_start_dt, pi.prd_key) AS product_key,
+	ROW_NUMBER() OVER(ORDER BY pi.prd_start_dt, pi.prd_key) AS product_key, -- Surrogate Key
 	pi.prd_id AS product_id,
 	pi.prd_key AS product_code,
 	pi.prd_nm AS product_name,

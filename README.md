@@ -1,4 +1,4 @@
-# :pushpin: Data Warehouse
+# :pushpin: Data Warehouse SQL Project
 
 <br>
 
